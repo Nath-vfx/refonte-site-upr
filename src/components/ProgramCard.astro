@@ -1,0 +1,38 @@
+---
+import Button from "./Button.astro";
+
+const {
+    title = "Notre Programme",
+    text = "Quis nulla consectetur nostrud amet cillum dolore ea reprehenderit cillum eu eu eu do. Consectetur nulla commodo reprehenderit duis exercitation sit voluptate. Aliqua elit nisi aliqua. Id Lorem deserunt anim. Fugiat dolore veniam ipsum ex. Aliqua culpa ea quis nulla.",
+} = Astro.props;
+---
+
+<div class="Program">
+    <h2 class="Program__title">{title}</h2>
+    <p class="Program__text">{text}</p>
+    <Button>Notre programme</Button>
+</div>
+
+<style lang="scss">
+    .Program {
+        @include regularSize;
+        color: $main-color;
+        text-align: center;
+        background-color: $main-color-light;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        background-image: url("../assets/rameau-background.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center left;
+        &__title {
+            text-transform: uppercase;
+            font-weight: 900;
+            font-size: $xxl;
+        }
+        &__text {
+            width: 50%;
+            margin: 1.5rem auto;
+        }
+    }
+</style>

@@ -1,0 +1,6 @@
+@use "variables" as *;
+
+@mixin regularSize {
+    max-width: $screen-default;
+    margin: auto;
+}
