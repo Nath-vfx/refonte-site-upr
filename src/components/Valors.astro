@@ -1,0 +1,27 @@
+---
+import Heading from "./Heading.astro";
+import ValorCard from "./ValorCard.astro";
+---
+
+<div class="Valors">
+    <Heading centered={true} hook="Grands principes"
+        >Nos valeurs fondatrices</Heading
+    >
+    <div class="Valors__list">
+        {[...Array(3)].map((_, index) => <ValorCard key={index} />)}
+    </div>
+</div>
+
+<style lang="scss">
+    .Valors {
+        margin: 4rem auto;
+        max-width: $screen-default;
+
+        &__list {
+            margin-top: 1rem;
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+</style>

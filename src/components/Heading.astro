@@ -1,0 +1,39 @@
+---
+const { hook = "Ceci est une accroche", centered = false } = Astro.props;
+---
+
+<div class:list={["Heading", { centered: centered }]}>
+    <span class="Heading__hook">{hook}</span>
+    <h1 class="Heading__title"><slot /></h1>
+</div>
+
+<style lang="scss">
+    .Heading {
+        color: $main-color;
+        display: flex;
+        gap: 2rem;
+        flex-direction: column;
+        width: max-content;
+        &__title {
+            font-family: "Martel Sans";
+            font-size: $xxl;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        &__hook {
+            padding: 0.5rem 1.5rem;
+            display: inline-block;
+            border: 1px solid $main-color;
+            border-radius: 3rem;
+            font-weight: 200;
+            font-size: $md;
+            width: max-content;
+        }
+    }
+
+    .centered {
+        text-align: center;
+        align-items: center;
+        margin: auto;
+    }
+</style>

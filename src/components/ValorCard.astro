@@ -1,0 +1,31 @@
+---
+const { text = "Ceci est un text", title = "Le titre" } = Astro.props;
+---
+
+<div class="Card">
+    <h3 class="Card__title">{title}</h3>
+    <p class="Card__text">{text}</p>
+</div>
+
+<style lang="scss">
+    .Card {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        border-radius: 0.5rem;
+        justify-content: space-around;
+        padding: 1rem;
+        gap: 1.25rem;
+        text-align: center;
+        height: 188px;
+        &__title {
+            font-family: "Martel Sans", sans-serif;
+            font-weight: 900;
+            font-size: 2.25rem;
+            text-transform: uppercase;
+            color: $main-color;
+        }
+        &__text {
+        }
+    }
+</style>
