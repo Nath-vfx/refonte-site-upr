@@ -1,5 +1,6 @@
 ---
-
+import { Image } from "astro:assets";
+import Logo from "../assets/logo-up-square.svg";
 ---
 
 <header class="Header">
@@ -18,10 +19,35 @@
                     <a href="">Lettre d'information</a>
                 </li>
                 <li class="Header__over__navigation__list__item">
-                    <a href="">Lettre d'information</a>
+                    <a href="">L'agenda</a>
                 </li>
                 <li class="Header__over__navigation__list__item">
+                    <a href="">Espace membre</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="Header__main">
+        <nav class="Header__main__nav">
+            <div class="Header__main__nav__logo">
+                <a href="/"
+                    ><Image src={Logo} alt="Le logo du mouvement de l'UPR" /></a
+                >
+            </div>
+            <ul class="Header__main__nav__list">
+                <li class="Header__main__nav__list__item">
                     <a href="">Lettre d'information</a>
+                </li>
+                <li class="Header__main__nav__list__item">
+                    <a href="">L'agenda</a>
+                </li>
+                <li class="Header__main__nav__list__item">
+                    <a href="">Espace membre</a>
+                </li>
+                <li class="Header__main__nav__list__item">
+                    <button class="Header__main__nav__list__item__button"
+                        >Militer</button
+                    >
                 </li>
             </ul>
         </nav>
@@ -30,10 +56,64 @@
 
 <style lang="scss">
     .Header {
+        &__main {
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            &__nav {
+                display: flex;
+                max-width: $screen-default;
+                margin: 0 auto;
+                justify-content: space-between;
+                align-items: center;
+                &__logo {
+                    width: max-content;
+                    height: auto;
+                    img {
+                        width: 5rem;
+                        height: auto;
+                    }
+                }
+                &__list {
+                    display: flex;
+                    gap: 2rem;
+                    align-items: center;
+                    &__item {
+                        &__button {
+                            padding: 0.5rem 1rem;
+                            background-color: $main-color;
+                            border: none;
+                            color: white;
+                            font-size: $md;
+                            border-radius: 2rem;
+                        }
+                    }
+                }
+            }
+        }
         &__over {
             background-color: $main-color;
-            display: flex;
             color: white;
+            padding: 0.5rem;
+            &__navigation {
+                max-width: $screen-default;
+                margin: 0 auto;
+                &__list {
+                    display: flex;
+                    gap: 2rem;
+                    justify-content: right;
+                    align-items: center;
+                    &__item {
+                        &__button {
+                            border: none;
+                            background-color: white;
+                            color: $main-color;
+                            padding: 0.5rem 1rem;
+                            border-radius: 2rem;
+                            font-size: $md;
+                        }
+                    }
+                }
+            }
         }
     }
 </style>
