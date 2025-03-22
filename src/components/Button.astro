@@ -1,0 +1,31 @@
+---
+const { link, light = false } = Astro.props;
+---
+
+<a href={link}>
+    <button class:list={["Button", { light: light }, { dark: !light }]}
+        ><slot /></button
+    ></a
+>
+
+<style lang="scss">
+    .Button {
+        font-family: "Open sans", sans-serif;
+        font-size: $md;
+        font-weight: bold;
+        border: none;
+        padding: 1rem 3rem;
+        border-radius: 2rem;
+        cursor: pointer;
+    }
+
+    .light {
+        color: $main-color;
+        background: white;
+    }
+
+    .dark {
+        color: white;
+        background: $main-color;
+    }
+</style>

@@ -56,9 +56,12 @@ import Logo from "../assets/logo-up-square.svg";
 
 <style lang="scss">
     .Header {
+        position: relative;
         &__main {
             background-color: white;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            height: 102px;
+            z-index: 10;
             &__nav {
                 display: flex;
                 max-width: $screen-default;
