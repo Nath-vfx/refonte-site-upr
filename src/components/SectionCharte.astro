@@ -1,0 +1,62 @@
+---
+import { Image } from "astro:assets";
+import Button from "./Button.astro";
+
+const {
+    title = "Charte fondatrice",
+    text = "Quis nulla consectetur nostrud amet cillum dolore ea reprehenderit cillum eu eu eu do. Consectetur nulla commodo reprehenderit duis exercitation sit voluptate. Aliqua elit nisi aliqua. Id Lorem deserunt anim. Fugiat dolore veniam ipsum ex. Aliqua culpa ea quis nulla.",
+    button = "Notre charte fondatrice",
+    link = "#",
+    image = "/logo-upr-couleurs-carre.svg",
+} = Astro.props;
+---
+
+<div class="Charte">
+    <div class="Charte__container">
+        <h2 class="Charte__container__title">{title}</h2>
+        <p class="Charte__container__text">{text}</p>
+        <Button link={link} light={true}>{button}</Button>
+    </div>
+    <div class="Charte__image">
+        <Image
+            src={image}
+            width={182}
+            height={196}
+            alt="Logo de l'Union Populaire Républicaine"
+            loading="lazy"
+        />
+    </div>
+</div>
+
+<style lang="scss">
+    .Charte {
+        @include regularSize;
+        background-color: $main-color;
+        display: flex;
+        justify-content: space-around;
+        padding: 2rem 3rem;
+        background-image: url("../assets/rameau-background.svg");
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: contain;
+        border-radius: .5rem;
+
+        &__container {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-shrink: 10;
+           &__text {
+                width: 60%;
+            }
+            &__title {
+                width: max-content;
+            }
+        }
+        &__image {
+            flex-shrink: 0;
+            margin: 2rem;
+        }
+    }
+</style>

@@ -9,6 +9,9 @@ const { link, light = false } = Astro.props;
 >
 
 <style lang="scss">
+    a {
+        width: max-content;
+    }
     .Button {
         font-family: "Open sans", sans-serif;
         font-size: $md;
@@ -17,6 +20,7 @@ const { link, light = false } = Astro.props;
         padding: 1rem 3rem;
         border-radius: 2rem;
         cursor: pointer;
+        
     }
 
     .light {

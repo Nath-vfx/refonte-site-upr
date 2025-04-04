@@ -2,5 +2,15 @@
 
 @mixin regularSize {
     max-width: $screen-default;
-    margin: auto;
+    margin: 4rem auto;
+}
+
+@mixin title2 {
+    font-size: $xxl;
+    font-weight: 800;
+}
+
+@mixin text {
+    font-size: $md;
+    font-weight: 400;
 }

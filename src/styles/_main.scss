@@ -1,6 +1,7 @@
 @forward "mixins";
 @forward "variables";
 
+@use "mixins" as *;
 * {
     padding: 0;
     margin: 0;
@@ -20,6 +21,14 @@ h4,
 h5,
 h6 {
     font-family: "Martel Sans", sans-serif;
+}
+
+h2 {
+    @include title2;
+}
+
+p {
+    @include text;
 }
 
 a {
