@@ -1,0 +1,51 @@
+---
+import CarteArticle from "./CarteArticle.astro";
+import Heading from "./Heading.astro";
+import CarteConference from "./CarteConference.astro";
+import Button from "./Button.astro";
+---
+
+<div class="Presse">
+    <Heading hook="Presse"> Retrouvez nos conférences et articles </Heading>
+    <div class="Presse__container">
+        <div class="Presse__container__item"><CarteArticle /></div>
+        <div class="Presse__container__item"><CarteArticle /></div>
+        <div class="Presse__container__item"><CarteArticle /></div>
+        <div class="Presse__container__item"><CarteArticle /></div>
+        <div class="Presse__container__item"><CarteConference /></div>
+    </div>
+    <div class="Presse__button">
+        <Button link="/">Voir plus d'articles</Button>
+    </div>
+</div>
+
+<style lang="scss">
+    .Presse {
+        @include regularSize;
+        &__container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 16px;
+            &__item {
+                &:nth-child(3) {
+                    grid-column-start: 1;
+                    grid-row-start: 2;
+                }
+                &:nth-child(4) {
+                    grid-column-start: 2;
+                    grid-row-start: 2;
+                }
+                &:nth-child(5) {
+                    grid-row: span 2 / span 2;
+                    grid-column-start: 3;
+                    grid-row-start: 1;
+                }
+            }
+        }
+        &__button {
+            margin: 4rem auto;
+            max-width: max-content;
+        }
+    }
+</style>

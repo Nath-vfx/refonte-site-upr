@@ -1,0 +1,80 @@
+---
+import Image from "astro/components/Image.astro";
+
+const { title = "Ceci est un article", text = "Excepteur velit magna fugiat voluptate voluptate ea pariatur aute consectetur.", image, link, author = "John Doe", date = "4 Avril 2024" } = Astro.props;
+---
+
+<a class="Card" href={link}>
+    <Image
+        class="Card__image"
+        src="https://picsum.photos/360/360/"
+        height={360}
+        width={360}
+        alt="Une photo"
+        loading="lazy"
+    />
+
+    <div class="Card__container">
+        <h4 class="Card__container__title">
+            {title}
+        </h4>
+        <p class="Card__container__text">
+            {text.length >= 196 ? text.slice(0, 196) + "..." : text}
+        </p>
+        <div class="Card__container__infos">
+            <Image
+                class="Card__container__infos__avatar"
+                src="https://picsum.photos/48/48/"
+                width={24}
+                height={24}
+                alt={author}
+            />
+            <span class="Card__container__infos__name">{author}</span>
+            -
+            <span class="Card__container__infos__date">{date}</span>
+        </div>
+    </div>
+</a>
+
+<style lang="scss">
+    .Card {
+        height: max-content;
+        display: block;
+        font-family: "Open Sans", sans-serif;
+        &__image {
+            width: 100%;
+            height: 196px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        &__container {
+            min-height: 144px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            font-size: $sm;
+            &__text {
+                
+            }
+            &__title {
+                font-size: $lg;
+                color: $main-color;
+                font-weight: 900;
+            }
+            &__infos {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+
+                font-weight: 700;
+                &__name {
+                }
+                &__avatar {
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+</style>
