@@ -1,0 +1,70 @@
+---
+import Image from "astro/components/Image.astro";
+
+const {
+    person = "François Asselineau",
+    position = "Président et fondateur de l'UPR",
+    text = "Dolor sunt reprehenderit quis adipisicing aliqua quis duis culpa ad elit eu ullamco. Dolor sunt reprehenderit quis adipisicing aliqua quis duis culpa ad elit eu ullamco.",
+    image = "https://picsum.photos/480/340/",
+} = Astro.props;
+---
+
+<div class="Citation">
+    <div class="Citation__container">
+        <hgroup class="Citation__container__head">
+            <h3 class="Citation__container__head__title">{person}</h3>
+            <span class="Citation__container__head__post">{position}</span>
+        </hgroup>
+        <p class="Citation__container__text">" {text} "</p>
+    </div>
+    <div class="Citation__image">
+        <Image
+            src={image}
+            width={480}
+            height={340}
+            alt="Une photo de François Asselineau"
+            loading="eager"
+        />
+    </div>
+</div>
+
+<style lang="scss">
+    .Citation {
+        @include regularSize;
+        display: flex;
+        background-color: $main-color;
+        color: #fff;
+        border-radius: .5rem;
+        &__container {
+            padding: 2rem;
+            background-image: url("../assets/rameau-background.svg");
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            gap: 2rem;
+            &__text {
+                justify-self: flex-end !important;
+            }
+            &__head {
+                display: flex;
+                flex-direction: column-reverse;
+                gap: 1rem;
+                &__title {
+                    font-weight: 800;
+                }
+            }
+        }
+        &__image {
+            img {
+                height: 100%;
+                border-top-right-radius: .5rem;
+                border-bottom-right-radius: .5rem;
+
+            }
+        }
+
+    }
+</style>

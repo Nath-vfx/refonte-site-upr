@@ -1,0 +1,40 @@
+---
+import Heading from "./Heading.astro";
+import CarteEmission from "./CarteEmission.astro";
+import Button from "./Button.astro";
+---
+
+<div class="Emissions">
+    <Heading>Retrouvez toutes les émissions de l'UPR</Heading>
+    <div class="Emissions__list">
+        
+        {
+            Array.from({ length: 9 }, (_, i) => (
+                <CarteEmission/>
+            ))
+        }
+    </div>
+    <div class="Emissions__bouton">
+        <Button link="#">Retrouvez toutes nos emissions</Button>
+    </div>
+</div>
+
+<style lang="scss">
+    .Emissions {
+        @include regularSize;
+        margin-top: 8rem;
+        margin-bottom: 8rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        &__list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        &__bouton {
+            align-self: center;
+        }
+    }
+</style>
