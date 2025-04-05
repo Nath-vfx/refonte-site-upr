@@ -6,7 +6,7 @@ import Button from "./Button.astro";
 ---
 
 <div class="Presse">
-    <Heading hook="Presse"> Retrouvez nos conférences et articles </Heading>
+    <Heading hook="Presse">Retrouvez nos conférences et articles</Heading>
     <div class="Presse__container">
         <div class="Presse__container__item"><CarteArticle /></div>
         <div class="Presse__container__item"><CarteArticle /></div>
@@ -27,6 +27,7 @@ import Button from "./Button.astro";
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(2, 1fr);
             gap: 16px;
+            margin-top: 2rem;
             &__item {
                 &:nth-child(3) {
                     grid-column-start: 1;

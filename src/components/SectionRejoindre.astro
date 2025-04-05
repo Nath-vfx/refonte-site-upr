@@ -1,0 +1,48 @@
+---
+import Button from "./Button.astro";
+
+const {
+  title = "Rejoindre l'UPR",
+  text = "Commodo mollit commodo nostrud enim nulla eu laborum.",
+  button = "Je rejoins le mouvement",
+  link = "/",
+} = Astro.props;
+---
+
+<div class="Rejoindre">
+    <div class="Rejoindre__container">
+        <h2 class="Rejoindre__container__title">{title}</h2>
+        <p class="Rejoindre__container__text">{text}</p>
+        <div class="Rejoindre__container__button">
+            <Button light={true} link={link}>{button}</Button>
+        </div>
+    </div>
+</div>
+
+<style lang="scss">
+    .Rejoindre {
+        color: white;
+        background-color: $main-color;
+        background-image: url("../assets/rameau-background.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        padding-bottom: 2rem;
+        &__container {
+            @include regularSize;
+            padding: 2rem;
+            text-align: center;
+            &__title {
+                font-weight: 900;
+                margin-bottom: 2rem;
+            }
+            &__text {
+                margin-bottom: 3rem;
+            }
+            &__button {
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+</style>

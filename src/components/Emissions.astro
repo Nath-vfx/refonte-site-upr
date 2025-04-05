@@ -5,11 +5,11 @@ import Button from "./Button.astro";
 ---
 
 <div class="Emissions">
-    <Heading>Retrouvez toutes les émissions de l'UPR</Heading>
+    <Heading hook="Émissions">Retrouvez toutes les émissions de l'UPR</Heading>
     <div class="Emissions__list">
         
         {
-            Array.from({ length: 9 }, (_, i) => (
+            Array.from({ length: 3 }, (_, i) => (
                 <CarteEmission/>
             ))
         }
@@ -29,8 +29,8 @@ import Button from "./Button.astro";
         gap: 2rem;
         &__list {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(4, 1fr);
             gap: 1rem;
         }
         &__bouton {
