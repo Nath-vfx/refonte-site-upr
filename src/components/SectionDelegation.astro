@@ -1,0 +1,52 @@
+---
+import { Image } from "astro:assets";
+import Button from "./Button.astro";
+
+const {
+    title = "Nos délégations sur tout le territoire",
+    text = "Retrouvez la déléagation la plus proche de chez vous",
+    image = {
+        src: "https://picsum.photos/480/256",
+        alt: "Une superbe photo",
+        width: 480,
+        height: 256,
+    },
+    button = "Retrouvez votre délégation départementale",
+    link = "#",
+} = Astro.props;
+---
+
+<div class="Delegation">
+    <div class="Delegation__container">
+        <h2 class="Delegation__container__title">{title}</h2>
+        <p class="Delegation__container__text">{text}</p>
+        <Button link={link}>{button}</Button>
+    </div>
+    <Image
+        class="Delegation__image"
+        src={image.src}
+        width={image.width}
+        height={image.height}
+        alt={image.alt}
+        loading="lazy"
+    />
+</div>
+
+<style lang="scss">
+    .Delegation {
+        @include regularSize;
+        display: flex;
+        justify-content: space-between;
+        &__container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            &__title {
+                color: $main-color;
+            }
+        }
+        &__image {
+            border-radius: .5rem;
+        }
+    }
+</style>
