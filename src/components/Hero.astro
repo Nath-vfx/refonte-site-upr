@@ -2,7 +2,7 @@
 import Button from "./Button.astro";
 import ArrowBottom from "./ArrowBottom.astro";
 
-const { background = "/clouds.avif" } = Astro.props;
+const {background = "/asselineau-2017.jpg"} = Astro.props;
 ---
 
 <main class="Hero" style={`background-image: url(${background})`}>
@@ -17,123 +17,77 @@ const { background = "/clouds.avif" } = Astro.props;
             </p>
             <div class="Hero__container__content__buttons">
                 <Button link="/" light={true}>J'hadère</Button>
-                <Button link="/" light={false}>Je découvre</Button>
+                <Button link="/" light={false} border={true}>Je découvre</Button>
             </div>
         </div>
-        <aside class="Hero__container__aside">
-            <ul class="Hero__container__aside__list">
-                <li class="Hero__container__aside__list__item">
-                    <h2 class="Hero__container__aside__list__item__title">
-                        2007
-                    </h2>
-                    <p class="Hero__container__aside__list__item__text">
-                        Fondé par François Asselineau en 2007
-                    </p>
-                </li>
-                <li class="Hero__container__aside__list__item">
-                    <h2 class="Hero__container__aside__list__item__title">
-                        2007
-                    </h2>
-                    <p class="Hero__container__aside__list__item__text">
-                        Fondé par François Asselineau en 2007
-                    </p>
-                </li>
-                <li class="Hero__container__aside__list__item">
-                    <h2 class="Hero__container__aside__list__item__title">
-                        2007
-                    </h2>
-                    <p class="Hero__container__aside__list__item__text">
-                        Fondé par François Asselineau en 2007
-                    </p>
-                </li>
-            </ul>
-        </aside>
     </div>
-    <ArrowBottom top={80} destination="#" />
 
     <style lang="scss">
-        .Hero {
-            width: 100vw;
-            height: calc(100vh - 152px);
-            background-size: cover;
-            background-position-x: center;
-            background-position-y: 50%;
+      .Hero {
+        height: calc(100vh - 152px);
+        background-size: cover;
+        background-position-x: center;
+        background-position-y: 50%;
+        position: relative;
+
+        &__container {
+          margin: 0 auto;
+          max-width: $screen-default;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+
+          &__content {
+            color: white;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             position: relative;
-            &__container {
-                margin: 0 auto;
-                max-width: $screen-default;
-                width: 100%;
-                height: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                &__content {
-                    color: white;
-                    height: 348px;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    position: relative;
-                    max-width: 744px;
-                    &::after {
-                        content: url("../assets/rameau.svg");
-                        position: absolute;
-                        right: 0;
-                        top: -2rem;
-                    }
-                    &__overtitle {
-                        padding: 0.5rem 2rem;
-                        text-transform: uppercase;
-                        font-size: $xl;
-                        font-weight: 900;
-                        border: 1px solid white;
-                        border-radius: 2rem;
-                        max-width: min-content;
-                    }
-                    &__title {
-                        font-size: $xxxl;
-                        text-transform: uppercase;
-                        font-weight: 900;
-                        font-family: "Martel Sans", sans-serif;
-                        line-height: 3.5rem;
-                    }
-                    &__buttons {
-                        display: flex;
-                        gap: 2rem;
-                    }
-                }
-                &__aside {
-                    color: white;
-                    &__list {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 1rem;
-                        &__item {
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-                            justify-content: center;
-                            background-color: $main-color-transparent;
-                            border-radius: 0.25rem;
-                            width: 264px;
-                            height: 192px;
-                            padding: 1rem;
-                            border: 1px solid $main-color;
-                            gap: 1rem;
-                            &__title {
-                                text-align: center;
-                                font-size: $xxl;
-                                font-family: "Martel Sans", sans-serif;
-                                font-weight: 900;
-                            }
-                            &__text {
-                                text-align: center;
-                                font-size: $sm;
-                            }
-                        }
-                    }
-                }
+            max-width: 748px;
+            gap: 2rem;
+            background-color: $main-color;
+            padding: 0 2rem;
+
+
+
+            &__overtitle {
+              padding: 0.5rem 2rem;
+              text-transform: uppercase;
+              font-size: $xl;
+              font-weight: 900;
+              border: 1px solid white;
+              border-radius: 2rem;
+              max-width: min-content;
             }
+
+            &__title {
+              font-size: $xxxl;
+              text-transform: uppercase;
+              font-weight: 900;
+              font-family: "Martel Sans", sans-serif;
+              line-height: 3.5rem;
+              position: relative;
+              &::after {
+                content: url("../assets/rameau.svg");
+                position: absolute;
+                right: 0;
+                top: -8rem;
+              }
+            }
+            &__quote {
+              font-size: $lg;
+            }
+
+            &__buttons {
+              display: flex;
+              gap: 2rem;
+            }
+          }
         }
+      }
     </style>
 </main>

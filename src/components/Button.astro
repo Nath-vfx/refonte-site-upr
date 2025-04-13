@@ -1,9 +1,9 @@
 ---
-const { link, light = false } = Astro.props;
+const { link, light = false, border = false } = Astro.props;
 ---
 
 <a href={link}>
-    <button class:list={["Button", { light: light }, { dark: !light }]}
+    <button class:list={["Button", { light: light }, { dark: !light }, {bordered: border}]}
         ><slot /></button
     ></a
 >
@@ -31,5 +31,13 @@ const { link, light = false } = Astro.props;
     .dark {
         color: white;
         background: $main-color;
+    }
+
+    .dark.bordered {
+      border: 1px solid white !important;
+    }
+
+    .light.bordered {
+      border: 1px solid $main-color !important;
     }
 </style>

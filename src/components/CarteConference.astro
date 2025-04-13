@@ -3,51 +3,51 @@ import Image from "astro/components/Image.astro";
 import Button from "./Button.astro";
 
 const {
-  title = "Les conférences du président",
-  text = "Commodo mollit commodo nostrud enim nulla eu laborum. Anim minim labore fugiat consequat sint qui. Laborum in reprehenderit Lorem est. Mollit pariatur nulla deserunt. Sint commodo et aliquip irure elit adipisicing. Velit deserunt est anim consectetur aliqua aliquip pariatur ad incididunt ipsum excepteur. Sint veniam consectetur consequat consequat tempor pariatur nostrud dolore esse enim in eiusmod.",
-  button = "Les conférences",
-  link = "/",
-  image = "/fa-2.jpg",
+    title = "Les conférences du président",
+    text = "Commodo mollit commodo nostrud enim nulla eu laborum. Anim minim labore fugiat consequat sint qui. Laborum in reprehenderit Lorem est. Mollit pariatur nulla deserunt. Sint commodo et aliquip irure elit adipisicing. Velit deserunt est anim consectetur aliqua aliquip pariatur ad incididunt ipsum excepteur. Sint veniam consectetur consequat consequat tempor pariatur nostrud dolore esse enim in eiusmod.",
+    button = "Les conférences",
+    link = "/",
+    image = "/fa-2.jpg",
 } = Astro.props;
 ---
 
 <div class="Conference">
-  <Image
-    class="Conference__image"
-    src={image}
-    width={480}
-    height={360}
-    alt="Monsieur François Asselineau"
-    loading="lazy"
-  />
-  <div class="Conference__container">
-    <h3 class="Conference__container__title">{title}</h3>
-    <p class="Conference__container__text">{text}</p>
-    <Button light={true} link={link}>{button}</Button>
-  </div>
+    <Image
+        class="Conference__image"
+        src={image}
+        width={480}
+        height={360}
+        alt="Monsieur François Asselineau"
+        loading="lazy"
+    />
+    <div class="Conference__container">
+        <h3 class="Conference__container__title">{title}</h3>
+        <p class="Conference__container__text">{text}</p>
+        <Button light={true} link={link}>{button}</Button>
+    </div>
 </div>
 
 <style lang="scss">
-  .Conference {
-    color: white;
-    background-color: $main-color;
-    height: 100%;
-    border-radius: 0.5rem;
-    &__image {
-      border-top-left-radius: 0.5rem;
-      border-top-right-radius: 0.5rem;
-      object-fit: cover;
+    .Conference {
+        color: white;
+        background-color: $main-color;
+        height: 100%;
+        border-radius: 0.5rem;
+        &__image {
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+            object-fit: cover;
+        }
+        &__container {
+            padding: 2rem;
+            text-align: center;
+            &__title {
+                font-weight: 900;
+                margin-bottom: 1rem;
+            }
+            &__text {
+                margin-bottom: 2rem;
+            }
+        }
     }
-    &__container {
-      padding: 2rem;
-      text-align: center;
-      &__title {
-        font-weight: 900;
-        margin-bottom: 1rem;
-      }
-      &__text {
-        margin-bottom: 2rem;
-      }
-    }
-  }
 </style>
