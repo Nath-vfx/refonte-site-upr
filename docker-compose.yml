@@ -1,0 +1,10 @@
+services:
+  site-upr:
+    image: refonte-site-upr
+    container_name: site-upr
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    restart: unless-stopped
