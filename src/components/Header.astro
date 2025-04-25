@@ -4,29 +4,6 @@ import Logo from "../assets/logo-up-square.svg";
 ---
 
 <header class="Header">
-    <div class="Header__over">
-        <nav class="Header__over__navigation">
-            <ul class="Header__over__navigation__list">
-                <li class="Header__over__navigation__list__item">
-                    <a href="">
-                        <button
-                            class="Header__over__navigation__list__item__button"
-                            >Contact</button
-                        >
-                    </a>
-                </li>
-                <li class="Header__over__navigation__list__item">
-                    <a href="">Lettre d'information</a>
-                </li>
-                <li class="Header__over__navigation__list__item">
-                    <a href="">L'agenda</a>
-                </li>
-                <li class="Header__over__navigation__list__item">
-                    <a href="">Espace membre</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
     <div class="Header__main">
         <nav class="Header__main__nav">
             <div class="Header__main__nav__logo">
@@ -36,17 +13,20 @@ import Logo from "../assets/logo-up-square.svg";
             </div>
             <ul class="Header__main__nav__list">
                 <li class="Header__main__nav__list__item">
-                    <a href="">Lettre d'information</a>
+                    <a href="">Le président</a>
                 </li>
                 <li class="Header__main__nav__list__item">
-                    <a href="">L'agenda</a>
+                    <a href="">Charte & programme</a>
                 </li>
                 <li class="Header__main__nav__list__item">
-                    <a href="">Espace membre</a>
+                    <a href="">Agenda</a>
+                </li>
+                <li class="Header__main__nav__list__item">
+                    <a href="">Contact</a>
                 </li>
                 <li class="Header__main__nav__list__item">
                     <button class="Header__main__nav__list__item__button"
-                        >Militer</button
+                        >Espace membre</button
                     >
                 </li>
             </ul>
@@ -57,20 +37,26 @@ import Logo from "../assets/logo-up-square.svg";
 <style lang="scss">
     .Header {
         position: relative;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 100;
         &__main {
             background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            height: 102px;
             z-index: 10;
+            background-color: #00737c;
+            height: 112px;
             &__nav {
                 display: flex;
                 max-width: $screen-default;
                 margin: 0 auto;
                 justify-content: space-between;
                 align-items: center;
+                color: white;
+                font-weight: 700;
+
                 &__logo {
                     width: max-content;
                     height: auto;
+                    padding: 0.5rem 0;
                     img {
                         width: 5rem;
                         height: auto;
@@ -83,38 +69,18 @@ import Logo from "../assets/logo-up-square.svg";
                     &__item {
                         &__button {
                             padding: 0.5rem 1rem;
-                            background-color: $main-color;
-                            border: none;
-                            color: white;
-                            font-size: $md;
-                            border-radius: 2rem;
-                        }
-                    }
-                }
-            }
-        }
-        &__over {
-            background-color: $main-color;
-            color: white;
-            padding: 0.5rem;
-            &__navigation {
-                max-width: $screen-default;
-                margin: 0 auto;
-                &__list {
-                    display: flex;
-                    gap: 2rem;
-                    justify-content: right;
-                    align-items: center;
-                    &__item {
-                        font-weight: 600;
-                        &__button {
-                            border: none;
                             background-color: white;
+                            border: none;
                             color: $main-color;
-                            padding: 0.5rem 1rem;
-                            border-radius: 2rem;
                             font-size: $md;
-                            font-weight: 600;
+                            border-radius: 2rem;
+                            font-weight: 700;
+                            display: flex;
+                            gap: 1rem;
+                            align-items: center;
+                            &::after {
+                                content: url("../assets/person-icon.svg");
+                            }
                         }
                     }
                 }

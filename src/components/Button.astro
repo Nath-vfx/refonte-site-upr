@@ -1,10 +1,16 @@
 ---
-const { link, light = false, border = false } = Astro.props;
+const { link, light = false, border = false, background = true } = Astro.props;
 ---
 
 <a href={link}>
-    <button class:list={["Button", { light: light }, { dark: !light }, {bordered: border}]}
-        ><slot /></button
+    <button
+        class:list={[
+            "Button",
+            { light: light },
+            { dark: !light },
+            { bordered: border },
+            { background: background },
+        ]}><slot /></button
     ></a
 >
 
@@ -14,30 +20,36 @@ const { link, light = false, border = false } = Astro.props;
     }
     .Button {
         font-family: "Open sans", sans-serif;
-        font-size: $md;
+        font-size: $lg;
         font-weight: bold;
         border: none;
         padding: 1rem 3rem;
         border-radius: 2rem;
         cursor: pointer;
-        
+        background-color: transparent;
     }
 
     .light {
         color: $main-color;
-        background: white;
     }
 
     .dark {
         color: white;
+    }
+
+    .background.light {
+        background: white;
+    }
+
+    .background.dark {
         background: $main-color;
     }
 
     .dark.bordered {
-      border: 1px solid white !important;
+        border: 1px solid white !important;
     }
 
     .light.bordered {
-      border: 1px solid $main-color !important;
+        border: 1px solid $main-color !important;
     }
 </style>

@@ -1,8 +1,6 @@
 ---
 import Button from "./Button.astro";
-import ArrowBottom from "./ArrowBottom.astro";
-
-const {background = "/asselineau-2017.jpg"} = Astro.props;
+const { background = "/asselineau-2017.jpg" } = Astro.props;
 ---
 
 <main class="Hero" style={`background-image: url(${background})`}>
@@ -13,81 +11,104 @@ const {background = "/asselineau-2017.jpg"} = Astro.props;
                 L'union du peuple pour rétablir la démocratie
             </h1>
             <p class="Hero__container__content__quote">
-                Magna esse culpa exercitation magna ea reprehenderit sunt.
+                Le FREXIT pour une France souveraine et indépendante
             </p>
             <div class="Hero__container__content__buttons">
-                <Button link="/" light={true}>J'hadère</Button>
-                <Button link="/" light={false} border={true}>Je découvre</Button>
+                <Button link="/" light={true}>J'adhère</Button>
+                <Button link="/" light={false} border={true} background={false}
+                    >Je découvre</Button
+                >
             </div>
         </div>
     </div>
 
     <style lang="scss">
-      .Hero {
-        height: calc(100vh - 152px);
-        background-size: cover;
-        background-position-x: center;
-        background-position-y: 50%;
-        position: relative;
-
-        &__container {
-          margin: 0 auto;
-          max-width: $screen-default;
-          width: 100%;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-
-
-          &__content {
-            color: white;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        .Hero {
+            height: calc(100vh - 112px);
+            background-size: cover;
+            background-position-x: center;
+            background-position-y: 50%;
             position: relative;
-            max-width: 748px;
-            gap: 2rem;
-            background-color: $main-color;
-            padding: 0 2rem;
 
+            &__container {
+                margin: 0 auto;
+                max-width: $screen-default;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
 
+                &__content {
+                    color: white;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    position: relative;
+                    max-width: 748px;
+                    gap: 2rem;
+                    background-color: $main-color-transparent;
+                    padding: 0 2rem;
+                    position: relative;
+                    &::after {
+                        content: "";
+                        background-image: url("../assets/bottom-banner.svg");
+                        background-clip: border-box;
+                        background-size: cover;
+                        position: absolute;
+                        height: 10px;
+                        width: 100%;
+                        left: 0;
+                        margin: 0;
+                        bottom: 0;
+                    }
 
-            &__overtitle {
-              padding: 0.5rem 2rem;
-              text-transform: uppercase;
-              font-size: $xl;
-              font-weight: 900;
-              border: 1px solid white;
-              border-radius: 2rem;
-              max-width: min-content;
+                    &__overtitle {
+                        padding: 0.5rem 2rem;
+                        text-transform: uppercase;
+                        font-size: $xl;
+                        font-weight: 900;
+                        max-width: min-content;
+                        position: relative;
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            width: 12px;
+                            height: 12px;
+                            background-color: white;
+                            border-radius: 50%;
+                            left: 0;
+                            top: 50%;
+                            transform: translate(50%, -50%);
+                        }
+                    }
+
+                    &__title {
+                        font-size: $xxxl;
+                        text-transform: uppercase;
+                        font-weight: 900;
+                        font-family: "Martel Sans", sans-serif;
+                        line-height: 3.5rem;
+                        position: relative;
+                        &::after {
+                            content: url("../assets/rameau.svg");
+                            position: absolute;
+                            right: 0;
+                            top: -8rem;
+                        }
+                    }
+                    &__quote {
+                        font-size: $lg;
+                    }
+
+                    &__buttons {
+                        margin-top: 3rem;
+                        display: flex;
+                        gap: 2rem;
+                    }
+                }
             }
-
-            &__title {
-              font-size: $xxxl;
-              text-transform: uppercase;
-              font-weight: 900;
-              font-family: "Martel Sans", sans-serif;
-              line-height: 3.5rem;
-              position: relative;
-              &::after {
-                content: url("../assets/rameau.svg");
-                position: absolute;
-                right: 0;
-                top: -8rem;
-              }
-            }
-            &__quote {
-              font-size: $lg;
-            }
-
-            &__buttons {
-              display: flex;
-              gap: 2rem;
-            }
-          }
         }
-      }
     </style>
 </main>
